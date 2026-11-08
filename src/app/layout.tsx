@@ -1,11 +1,11 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Vazirmatn } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import Providers from '@/components/providers'
 import { appConfig } from '@/config'
 
-const font = Inter({
+const font = Vazirmatn({
 	weight: ['400', '500', '600', '700', '800', '900'],
 	subsets: ['latin-ext'],
 })
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="fa" dir="rtl" suppressHydrationWarning>
 			<body className={`${font.className} antialiased`}>
 				<Providers>{children}</Providers>
 			</body>
