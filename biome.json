@@ -1,0 +1,95 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"ignoreUnknown": true
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"formatter": {
+		"enabled": true,
+		"lineEnding": "lf"
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"trailingCommas": "es5",
+			"quoteStyle": "single"
+		}
+	},
+	"css": {
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"tailwind": {
+		"stylesheet": "./src/app/globals.css",
+		"attributes": ["class", "className", "tw"],
+		"mergeFunctions": ["clsx", "cn", "tw"],
+		"variantFunctions": ["cva"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended",
+			"suspicious": {
+				"preset": "recommended",
+				"noExplicitAny": "off",
+				"noShadowRestrictedNames": "off",
+				"noArrayIndexKey": "off",
+				"noUnknownAtRules": "off",
+				"noAssignInExpressions": "off"
+			},
+			"nursery": {
+				"useReactCompiler": "error",
+				"useTailwindShorthandClasses": "error",
+				"useReactNamingConvention": "error",
+				"useTailwindSortedClasses": {
+					"fix": "safe",
+					"level": "warn"
+				}
+			},
+			"performance": {
+				"preset": "recommended"
+			},
+			"style": {
+				"preset": "recommended",
+				"noNonNullAssertion": "off",
+				"useSelfClosingElements": "off"
+			},
+			"correctness": {
+				"preset": "recommended",
+				"useExhaustiveDependencies": "off",
+				"noNextAsyncClientComponent": "error",
+				"noNestedComponentDefinitions": "off",
+				"useHookAtTopLevel": "error",
+				"noReactPropAssignments": "error",
+				"noUnusedImports": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"noUnusedVariables": {
+					"level": "error",
+					"fix": "safe"
+				}
+			},
+			"a11y": {
+				"preset": "recommended",
+				"noSvgWithoutTitle": "off",
+				"useSemanticElements": "off",
+				"useKeyWithClickEvents": "off",
+				"useFocusableInteractive": "off",
+				"noLabelWithoutControl": "off",
+				"useAriaPropsForRole": "off"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off"
+			}
+		}
+	}
+}
